@@ -27,6 +27,14 @@ public class BuddyInfo {
         this.id = id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getName(){
         return name;
     }
