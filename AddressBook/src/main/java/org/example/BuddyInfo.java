@@ -1,4 +1,5 @@
 package org.example;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,18 +13,27 @@ public class BuddyInfo {
 
     private String name;
     private String phoneNumber;
+    private String address;
 
-    public BuddyInfo(String name, String phoneNumber){
+    public BuddyInfo(String name, String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
-    public BuddyInfo(){
 
+    public BuddyInfo(String name, String phoneNumber, String address) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
-    public Integer getId(){
+
+    public BuddyInfo() {
+    }
+
+    public Integer getId() {
         return id;
     }
-    public void setId(Integer id){
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -31,19 +41,28 @@ public class BuddyInfo {
         this.name = name;
     }
 
-    public void setPhoneNumber(String phoneNumber){
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getName(){
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getName() {
         return name;
     }
-    public String getPhoneNumber(){
+
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
     @Override
-    public String toString(){
-        return name + "-" + phoneNumber;
+    public String toString() {
+        return name + "-" + phoneNumber + "-" + address;
     }
 }

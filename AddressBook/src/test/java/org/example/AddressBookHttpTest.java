@@ -31,9 +31,14 @@ class AddressBookHttpTest {
         assertNotNull(response.getBody().getId());
     }
 
+
     @Test
     void testCreateBuddy() {
-        BuddyInfo buddy = new BuddyInfo("Nitish", "613-555-1234");
+        BuddyInfo buddy = new BuddyInfo(
+                "Nitish",
+                "613-555-1234",
+                "Ottawa, ON"
+        );
 
         ResponseEntity<BuddyInfo> response = restTemplate.postForEntity(
                 "http://localhost:" + port + "/api/buddies",
@@ -46,5 +51,6 @@ class AddressBookHttpTest {
         assertNotNull(response.getBody().getId());
         assertEquals("Nitish", response.getBody().getName());
         assertEquals("613-555-1234", response.getBody().getPhoneNumber());
+        assertEquals("Ottawa, ON", response.getBody().getAddress());
     }
 }
