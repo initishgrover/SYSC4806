@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Book App</title>
+</head>
+<body>
+<h1>Address Book App</h1>
+
+<h2>Address Books</h2>
+
+<p th:if="${#lists.isEmpty(addressBooks)}">
+    No address books have been created yet.
+</p>
+
+<ul>
+    <li th:each="book : ${addressBooks}">
+        <a th:href="@{/addressbooks/{id}(id=${book.id})}"
+           th:text="'Address Book ' + ${book.id}">
+        </a>
+    </li>
+</ul>
+</body>
+</html>
